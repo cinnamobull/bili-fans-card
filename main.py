@@ -2,7 +2,7 @@ from PIL import Image, ImageFont, ImageDraw
 
 # settings
 background_path = "img/background.png"
-fans_no = "000001"
+fans_no = "313131"
 date = "2022/06/27"
 avatar_path = "img/a.png"
 uname = "啵啵小堂"
@@ -41,7 +41,10 @@ if __name__ == "__main__":
 
     # write fans number
     for i, n in enumerate(fans_no):
-        draw.text((49 + i * 50, 253), n, fill="#ffffffff", font=font_number)
+        if n != "1":
+            draw.text((49 + i * 50, 253), n, fill="#ffffffff", font=font_number)
+        else:
+            draw.text((49 + i * 50 + 10, 253), n, fill="#ffffffff", font=font_number)
 
     # write uname
     draw.text((160, 65), uname, fill="#ffffffff", font=font_uname)
