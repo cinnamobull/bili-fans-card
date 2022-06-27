@@ -39,3 +39,9 @@ uname = "啵啵小堂"
 ![](img/example1.png)
 
 ![](img/example2.png)
+
+## 在线版
+
+- 安装 `FastAPI` 和 `uvicorn` 服务，参见[这里](https://cloud.tencent.com/developer/article/1601020)
+- 在根目录下执行 `uvicorn.exe server:app`
+- 浏览器打开地址`http://127.0.0.1:8000/getCard?uid=<卡片申请人UID>&fans_no=<粉丝编号>`即可看到生成的图片
