@@ -1,4 +1,3 @@
-from turtle import back
 from PIL import Image, ImageFont, ImageDraw
 
 # settings
