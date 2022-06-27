@@ -4,6 +4,11 @@
 
 头图还没整，就是对着样例一点一点调参数，今天没时间。
 
+## 注意
+
+`psd/` 下的文件来自 [火花狐狸](https://space.bilibili.com/236165593) 佬。
+
+`agentdb-normal.ttf` 和 `FFF_Planeta.ttf` 不能商用。
 ## 使用方法
 
 修改 `main.py` 里的设置：
@@ -34,9 +39,3 @@ uname = "啵啵小堂"
 ![](img/example1.png)
 
 ![](img/example2.png)
-
-## 注意
-
-`psd/` 下的文件来自 [火花狐狸](https://space.bilibili.com/236165593) 佬。
-
-`agentdb-normal.ttf` 和 `FFF_Planeta.ttf` 不能商用。
