@@ -1,4 +1,5 @@
 from PIL import Image, ImageFont, ImageDraw
+import time
 
 class CardGenerator:
     font_number = ImageFont.truetype("font/FFF_Planeta.ttf", 75)
@@ -7,7 +8,7 @@ class CardGenerator:
     font_uname = ImageFont.truetype("font/HarmonyOSHans-400.ttf", 45)
 
     @classmethod
-    def getCard(cls: 'CardGenerator', background: Image, avatar: Image, date: str, fans_no: str, uname: str):
+    def getCard(cls: 'CardGenerator', background: Image, avatar: Image, date: time.struct_time, fans_no: int, uname: str):
         if background.mode != "RGBA":
             background = background.convert("RGBA")
         if background.size != (1256, 514):
@@ -27,11 +28,14 @@ class CardGenerator:
         draw.text((45, 392), "DATE", fill="#ffffff7f", font=cls.font_DATE)
 
         # wrtie date
-        draw.text((45, 450), date, fill="#ffffffff", font=cls.font_date)
+        draw.text((45, 450), time.strftime("%Y/%m/%d", date), fill="#ffffffff", font=cls.font_date)
 
         # write fans number
-        for i, n in enumerate(fans_no):
-            draw.text((49 + i * 50, 253), n, fill="#ffffffff", font=cls.font_number)
+        num_remain = fans_no
+        for i in range(6):
+            num = int(num_remain % 10)
+            draw.text((49 + (5 - i) * 50, 253), str(num), fill="#ffffffff", font=cls.font_number)
+            num_remain = (num_remain - num) / 10
 
         # write uname
         draw.text((160, 65), uname, fill="#ffffffff", font=cls.font_uname)

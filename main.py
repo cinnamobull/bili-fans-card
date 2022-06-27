@@ -1,10 +1,11 @@
 from card_generator import CardGenerator
 from PIL import Image
+import time
 
 # settings
 background_path = "img/background.png"
-fans_no = "000001"
-date = "2022/06/27"
+fans_no = 1
+date = time.localtime()
 avatar_path = "img/a.png"
 uname = "啵啵小堂"
 
